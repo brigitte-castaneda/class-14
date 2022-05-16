@@ -28,8 +28,8 @@ p_load(tidyverse,data.table,plyr, # cargar y/o instalar paquetes a usar
 # 1. Introducción: web-scraping # 
 #===============================#
 
-
-
+# ir a lecture
+browseURL("https://lectures-r.gitlab.io/202201/lecture-14")
 
 #==============================================#
 # 2. Atributos de un elemento (libreria rvest) # 
@@ -122,13 +122,12 @@ html_i %>% html_nodes("#abstract-body") %>% html_text()
 ### 2.4. Programemos esto dentro de un loop
 "Creemos un dataframe para almacenar la informacion"
 df_documentos = data.frame(titulo = rep(NA,nrow(link)),
-                            autores = rep(NA,nrow(link)),
-                            abstrac = rep(NA,nrow(link)),
-                             url = rep(NA,nrow(link)))
+                           autores = rep(NA,nrow(link)),
+                           abstrac = rep(NA,nrow(link)),
+                           url = rep(NA,nrow(link)))
 
 "hagamos el loop"
 for (i in 1:nrow(link)){
-    
     "definiendo url"
     url_i = link[i,1]
         
